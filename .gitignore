@@ -1,0 +1,25 @@
+# Secrets
+.env
+*.env
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Vector DB (rebuilt from the website on first run) and per-run evaluation output
+backend/chroma_db/
+backend/eval/results/
+.pytest_cache/
+
+# Node
+node_modules/
+dist/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
