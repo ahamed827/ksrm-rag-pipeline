@@ -1,0 +1,37 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --color-brand-50: #eef3ff;
+  --color-brand-100: #dbe5fe;
+  --color-brand-500: #3b6cf0;
+  --color-brand-600: #1f4fd1;
+  --color-brand-700: #1a41ad;
+  --animate-blink: blink 1.2s infinite;
+
+  @keyframes blink {
+    0%, 80%, 100% { opacity: 0.25; }
+    40% { opacity: 1; }
+  }
+}
+
+@layer base {
+  html, body, #root { height: 100%; }
+  body {
+    @apply bg-slate-50 text-slate-900 antialiased dark:bg-slate-950 dark:text-slate-100;
+  }
+}
+
+/* Markdown answers (kept minimal instead of pulling in the typography plugin). */
+@layer components {
+  .markdown { @apply text-[15px] leading-relaxed; }
+  .markdown > :first-child { @apply mt-0; }
+  .markdown > :last-child { @apply mb-0; }
+  .markdown p { @apply my-2; }
+  .markdown ul { @apply my-2 list-disc pl-5; }
+  .markdown ol { @apply my-2 list-decimal pl-5; }
+  .markdown li { @apply my-0.5; }
+  .markdown strong { @apply font-semibold; }
+  .markdown a { @apply text-brand-600 underline underline-offset-2 dark:text-brand-500; }
+  .markdown code { @apply rounded bg-slate-100 px-1 py-0.5 text-[0.9em] dark:bg-slate-800; }
+}
